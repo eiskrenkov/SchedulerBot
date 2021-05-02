@@ -1,0 +1,10 @@
+log_level: <%= ENV.fetch('LOG_LEVEL', 'error') %>
+
+telegram:
+  token: <%= ENV['TELEGRAM_BOT_TOKEN'] %>
+
+scheduler:
+  application_id: <%= ENV['SCHEDULER_APPLICATION_ID'] %>
+  api:
+    host: <%= ENV['SCHEDULER_API_HOST'] %>
+    secret: <%= ENV['SCHEDULER_API_SECRET'] %>
