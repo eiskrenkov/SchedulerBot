@@ -68,9 +68,8 @@ class SchedulerBot::Api::Client::Base
   end
 
   def handle_errrors(fallback_value)
-    yield
-  rescue Error
-    fallback_value
+    response = yield
+    response.successful? ? response.body_hash : fallback_value
   end
 
   def logger

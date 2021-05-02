@@ -1,5 +1,15 @@
 en:
   bot:
+    common:
+      weekdays:
+        mon: Понедельник
+        tue: Вторник
+        wed: Среда
+        thu: Четверг
+        fri: Пятница
+        sat: Суббота
+        sun: Воскресенье
+
     start:
       "Привет, %{username}! Меня зовут Scheduler и я создан для того,
       чтобы тебе было легче ориентироваться в расписании своей группы.
@@ -27,4 +37,15 @@ en:
         no_group_passed: Укажите имя группы
         success: Группа успешно установлена
         failure: Ошибка установки группы
+    schedule:
+      failure: Ошибка получения расписания
+      header: "*Расписание для группы %{group}*"
+      weekday:
+        header: "_%{weekday}:_"
+        pair:
+          kind:
+            lection: Лекция
+            practice: Практика
+            laboratory: Лаба
+            seminar: Семинар
 
