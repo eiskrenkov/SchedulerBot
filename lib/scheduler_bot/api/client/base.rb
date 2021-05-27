@@ -2,7 +2,7 @@ require 'singleton'
 require 'json'
 require 'faraday'
 
-class SchedulerBot::Api::Client::Base
+class SchedulerBot::API::Client::Base
   include Singleton
 
   class Error < StandardError; end
@@ -53,7 +53,7 @@ class SchedulerBot::Api::Client::Base
   end
 
   def sign_request(params)
-    params.merge!(signature: SchedulerBot::Api::Signature.new(api_secret).generate(params))
+    params.merge!(signature: SchedulerBot::API::Signature.new(api_secret).generate(params))
   end
 
   def log_request(verb, endpoint, params)

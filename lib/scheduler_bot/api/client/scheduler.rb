@@ -1,4 +1,4 @@
-class SchedulerBot::Api::Client::Scheduler < SchedulerBot::Api::Client::Base
+class SchedulerBot::API::Client::Scheduler < SchedulerBot::API::Client::Base
   def ping
     get('ping')
   end

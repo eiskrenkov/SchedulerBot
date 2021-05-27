@@ -19,7 +19,7 @@ class SchedulerBot::Telegram::CommandsHandler < Telegram::Bot::UpdatesController
   private
 
   def scheduler_api_client
-    @scheduler_api_client ||= SchedulerBot::Api::Client::Scheduler.instance
+    @scheduler_api_client ||= SchedulerBot::API::Client::Scheduler.instance
   end
 
   def send_message(message)

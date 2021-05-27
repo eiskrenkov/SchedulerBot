@@ -1,6 +1,6 @@
 require 'openssl'
 
-class SchedulerBot::Api::Signature
+class SchedulerBot::API::Signature
   SIGNATURE_KEY = 'signature'.freeze
   ALGORITHM = 'sha256'.freeze
 

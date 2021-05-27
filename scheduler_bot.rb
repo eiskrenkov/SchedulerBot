@@ -23,7 +23,7 @@ module SchedulerBot
     end
   end
 
-  module Api
+  module API
     autoload :Signature, './lib/scheduler_bot/api/signature'
 
     module Client
