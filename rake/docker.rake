@@ -8,10 +8,10 @@ namespace :docker do
     namespace :build do
       desc "Build #{stage} Docker image using #{configuration.dockerfile}"
       task stage do
-        # if CLI::Git.uncommited_changes?
-        #   CLI::IO.say('Repository has uncommitted changes. Please, commit them first', color: :red)
-        #   abort
-        # end
+        if !ENV['SKIP_GIT_CHECK'] && CLI::Git.uncommited_changes?
+          CLI::IO.say('Repository has uncommitted changes. Please, commit them first', color: :red)
+          abort
+        end
 
         say('Building image...')
 
