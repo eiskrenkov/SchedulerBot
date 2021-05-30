@@ -7,6 +7,26 @@ RUN apk --no-cache add build-base
 COPY Gemfile Gemfile.lock ./
 RUN bundle install --jobs 4 --without development test
 
-COPY . .
+# Copy root files
+COPY Rakefile \
+     configuration.yml \
+     ./
+
+# Copy locale files
+COPY locales/ ./locales/
+
+# Copy lib
+COPY lib/configuration.rb \
+     lib/scheduler_bot.rb \
+     ./lib/
+
+COPY lib/core_ext/ ./lib/core_ext/
+COPY lib/scheduler_bot/ ./lib/scheduler_bot/
+
+# Copy rake tasks
+COPY rake/bot.rake ./rake/
+
+RUN mkdir log/
+RUN touch log/scheduler_bot.log
 
 CMD ["rake", "telegram:bot:start"]

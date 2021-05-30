@@ -34,6 +34,6 @@ class SchedulerBot::API::Client::Scheduler < SchedulerBot::API::Client::Base
   end
 
   def scheduler_configuration
-    @scheduler_configuration ||= SchedulerBot.configuration.scheduler
+    @scheduler_configuration ||= Configuration.scheduler
   end
 end

@@ -1,7 +1,10 @@
 #!/usr/bin/env ruby
 
 require 'bundler/setup'
-require './scheduler_bot'
 require 'pry'
+
+require './lib/configuration'
+require './lib/scheduler_bot'
+require './lib/cli'
 
 Pry.start

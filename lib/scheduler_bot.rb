@@ -3,9 +3,9 @@ require 'logger'
 require './lib/core_ext/object'
 require './lib/core_ext/hash'
 
-module SchedulerBot
-  autoload :Configuration, './lib/scheduler_bot/configuration'
+require './lib/configuration'
 
+module SchedulerBot
   module Telegram
     autoload :Poller, './lib/scheduler_bot/telegram/poller'
     autoload :CommandsHandler, './lib/scheduler_bot/telegram/commands_handler'
@@ -33,12 +33,8 @@ module SchedulerBot
   end
 
   class << self
-    def configuration
-      @configuration ||= Configuration.load
-    end
-
     def logger
-      @logger ||= Logger.new('log/scheduler_bot.log', level: configuration.log_level)
+      @logger ||= Logger.new('log/scheduler_bot.log', level: Configuration.log_level)
     end
   end
 end

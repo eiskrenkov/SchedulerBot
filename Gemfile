@@ -5,6 +5,9 @@ gem 'rake', '~> 12.0'
 gem 'telegram-bot', '~> 0.15.0'
 gem 'faraday', '~> 1.4.1'
 
+# Deploying
+gem 'sshkit', '~> 1.21.2'
+
 # Support
 gem 'erb', '~> 2.2.3'
 

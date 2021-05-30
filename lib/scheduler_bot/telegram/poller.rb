@@ -23,6 +23,6 @@ class SchedulerBot::Telegram::Poller
   end
 
   def build_client
-    Telegram::Bot::Client.new(SchedulerBot.configuration.telegram.token)
+    Telegram::Bot::Client.new(Configuration.telegram.token)
   end
 end

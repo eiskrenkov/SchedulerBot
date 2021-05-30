@@ -8,3 +8,20 @@ scheduler:
   api:
     host: <%= ENV['SCHEDULER_API_HOST'] %>
     secret: <%= ENV['SCHEDULER_API_SECRET'] %>
+
+docker:
+  image:
+    name: scheduler_bot
+    host: ghcr.io
+    owner: <%= ENV['DOCKER_IMAGE_OWNER'] %>
+
+stages:
+  development:
+    dockerfile: Dockerfile
+
+  production:
+    dockerfile: Dockerfile.production
+    remote:
+      user: app
+      host: scheduler.iskrenkov.com
+      root: /var/www/scheduler_bot/
