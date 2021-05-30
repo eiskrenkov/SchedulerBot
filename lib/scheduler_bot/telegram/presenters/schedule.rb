@@ -10,8 +10,10 @@ class SchedulerBot::Telegram::Presenters::Schedule < SchedulerBot::Telegram::Pre
   end
 
   def present_weekdays
-    data.fetch(:weekdays, []).map do |weekday|
-      SchedulerBot::Telegram::Presenters::Weekday.new(weekday).present
+    data.fetch(:weekdays, []).each_with_object([]) do |weekday, memo|
+      next unless weekday[:pairs].present?
+
+      memo << SchedulerBot::Telegram::Presenters::Weekday.new(weekday).present
     end
   end
 end

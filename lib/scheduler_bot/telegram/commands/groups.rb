@@ -1,6 +1,6 @@
 module SchedulerBot::Telegram::Commands::Groups
   def list_groups!(*)
-    send_localized_message 'groups.list', groups: request_groups_list
+    send_localized_message 'groups.list', locale: { groups: request_groups_list }
   end
 
   def set_group!(group_name = nil, *)

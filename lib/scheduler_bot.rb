@@ -11,6 +11,7 @@ module SchedulerBot
     autoload :CommandsHandler, './lib/scheduler_bot/telegram/commands_handler'
 
     module Commands
+      autoload :Fallback, './lib/scheduler_bot/telegram/commands/fallback'
       autoload :Groups, './lib/scheduler_bot/telegram/commands/groups'
       autoload :Schedule, './lib/scheduler_bot/telegram/commands/schedule'
     end
